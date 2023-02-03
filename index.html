@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Web launcher</title>
+        <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="shortcut icon" href="New Piskel.png">
+       
+    </head>
+
+    <div style="position: absolute; top: 60px; left: 80px;">
+        <img src="New Piskel.png" class="cohete" style="width: 130px; height: 130px;">
+      </div>
+      
+    <body> 
+    <br>
+    <br>
+    <br>
+    <div id="internet-status"></div>
+    <div id="time"></div>
+    <div id="weather"></div>
+    <br>
+    <br>
+    <h1>Webs <button id="mas">+</button></h1>
+    <button id="youtube">Ir a YTb</button>
+    <button id="wiki">Ir a la Wiki</button>
+    <button onclick="window.open('https://chat.openai.com/chat', '_blank')">Ir a Chat GPT</button>
+    <button onclick="window.open('https://outlook.office.com/mail/', '_blank')">Ir al mail </button>
+    <button onclick="window.open('https://tecocloud.atlassian.net/jira/software/c/projects/TBX/boards/998?quickFilter=1693', '_blank')">Ir a Jira </button>
+    <button onclick="window.open('https://www.accessbanking.com.ar/RetailHomeBankingWeb/init.do', '_blank')">Ir a ICBC </button>
+    <button onclick="window.open('https://toolbox.telecom.com.ar/toolbox/dbmplus/index.html#/', '_blank')">Ir a DBM  </button>
+    <button onclick="window.open('https://www.argentina.gob.ar/interior/feriados-nacionales-2023', '_blank')">Ir a calendario  </button>
+    <button onclick="window.open('https://web2.0calc.es/', '_blank')">Ir a calc.  </button>
+    <button onclick="window.open('https://www.office.com/?auth=2', '_blank')">Ir a 365  </button>
+    <br>
+    <form id="nuevo-boton">
+        <br>
+        <label style="font-family: 'Press Start 2P', cursive; color: #00FF00; font-size: 12px;">Nombre:</label>
+        <input type="text" class="chatgpt-cursor" id="nombre" style="background-color: #273524; color: #00FF00; font-family: 'Press Start 2P', cursive; padding: 10px 20px; border: 3px solid #00FF00; animation: blink-caret 0.5s step-end infinite; outline: none; font-size: 12px;">
+        <label style="font-family: 'Press Start 2P', cursive; color: #00FF00; font-size: 12px;">URL:</label>
+        <input type="text" class="chatgpt-cursor" id="url" style="background-color: #273524; color: #00FF00; font-family: 'Press Start 2P', cursive; padding: 10px 20px; border: 3px solid #00FF00; animation: blink-caret 0.5s step-end infinite; outline: none; font-size: 12px;">
+        <input type="submit" value="Añadir" style="background-color: #273524; color: rgba(70, 255, 70, 0.692); font-family: 'Press Start 2P', Arial, sans-serif; padding: 10px 20px; border: 2px solid rgba(70, 255, 70, 0.692); font-size: 12px;">
+        <br>
+        </form>
+    <br>
+    <script src="script.js"></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Stickers <button id="btnAddSticker">+</button></h1>
+    <form id="formSticker" style="display: none;">
+        <label style="font-family: 'Press Start 2P', cursive; color: #28c528; font-size: 12px;">Detalle:</label>
+        <input type="text" id="txtSticker" maxlength="100" class="chatgpt-cursor" style="background-color: #273524; color: #00FF00; font-family: 'Press Start 2P', cursive; padding: 10px 20px; border: 3px solid #00FF00; animation: blink-caret 0.5s step-end infinite; outline: none; font-size: 12px;">
+        <button type="submit" id="btnSubmitSticker">Agregar Sticker</button>
+    </form>
+    <br>
+    <div id="stickersContainer"></div>
+    <script src="script2.js"></script>
+    <br>
+    <br>
+    </body>
+</html>
