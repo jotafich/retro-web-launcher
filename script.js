@@ -5,6 +5,7 @@ const nuevoBtn = document.getElementById("nuevo-boton");
 const nombreInput = document.getElementById("nombre");
 const urlInput = document.getElementById("url");
 const botonesGuardados = JSON.parse(localStorage.getItem("botones")) || [];
+const webContainer = document.getElementById("webContainer");
 
 
 function updateInternetStatus() {
@@ -61,19 +62,49 @@ navigator.geolocation.getCurrentPosition(function(position) {
         var city = data.name;
 
         document.getElementById("weather").innerHTML = `${city} / T:${temp}°C / H:${humidity}% / ${weather}`;
+        showWeatherImage(weather);
+        
     });
+    
 });
 
+function showWeatherImage(description) {
+  let weatherImage;
+  switch (description) {
+    case 'clear sky':
+      weatherImage = 'sunny.png';
+      break;
+    case 'few clouds':
+      weatherImage = 'few_clouds.png';
+      break;
+    case 'scattered clouds':
+      weatherImage = 'scattered_clouds.png';
+      break;
+    case 'broken clouds':
+      weatherImage = 'broken_clouds.png';
+      break;
+    case 'overcast clouds':
+      weatherImage = 'overcast_clouds.png';
+      break;
+    case 'shower rain':
+      weatherImage = 'shower_rain.png';
+      break;
+    case 'rain':
+      weatherImage = 'rain.png';
+      break;
+    case 'thunderstorm':
+      weatherImage = 'thunderstorm.png';
+      break;
+    case 'snow':
+      weatherImage = 'snow.png';
+      break;
+    default:
+      weatherImage = 'default.png';
+  }
+  document.getElementById('weather-image').src = weatherImage;
+}
 
 
-youtubeBtn.addEventListener("click", function() {
-    window.open("https://www.youtube.com", "_blank");
-  });
-  
-  wikiBtn.addEventListener("click", function() {
-    window.open("http://190.225.183.34/wiki/index.html#/base", "_blank");
-  });
-  
   masBtn.addEventListener("click", function() {
     nuevoBtn.style.display = nuevoBtn.style.display === "none" ? "block" : "none";
   });
@@ -90,13 +121,13 @@ youtubeBtn.addEventListener("click", function() {
     nuevoEnlace.addEventListener("click", function() {
       window.open(url, "_blank");
     });
-    document.body.appendChild(nuevoEnlace);
+    webContainer.appendChild(nuevoEnlace);
     nuevoBtn.style.display = "none";
     nombreInput.value = "";
     urlInput.value = "";
 });
  
-botonesGuardados.forEach(boton => {
+  botonesGuardados.forEach(boton => {
     const nuevoEnlace = document.createElement("button");
     nuevoEnlace.innerText = boton.nombre;
     nuevoEnlace.addEventListener("click", function() {
@@ -111,8 +142,8 @@ botonesGuardados.forEach(boton => {
       botonesGuardados.splice(index, 1);
       localStorage.setItem("botones", JSON.stringify(botonesGuardados));
     });
-    document.body.appendChild(nuevoEnlace);
-    document.body.appendChild(botonEliminar);
+    webContainer.appendChild(nuevoEnlace);
+    webContainer.appendChild(botonEliminar);
   });
   
 nuevoBtn.addEventListener("submit", function(event) {
@@ -135,7 +166,7 @@ nuevoBtn.addEventListener("submit", function(event) {
       localStorage.setItem("botones", JSON.stringify(botonesGuardados));
     });
     nuevoEnlace.appendChild(eliminarBoton);
-    document.body.appendChild(nuevoEnlace);
+    webContainer.appendChild(nuevoEnlace);
     botonesGuardados.push({ nombre, url });
     localStorage.setItem("botones", JSON.stringify(botonesGuardados));
     nuevoBtn.style.display = "none";

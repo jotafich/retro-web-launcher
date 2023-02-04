@@ -15,11 +15,11 @@ body {
 
   
   h1 {
-    font-family: "Arcade Boxes";
+    font-family: "ARCADE_I";
     color: rgba(38, 255, 38, 0.808);
     text-align: center;
     position: relative;
-    font-size: 60px;
+    font-size: 30px;
     }
   
 #time, #weather {
@@ -44,8 +44,9 @@ button {
     background-color: #273524; /*color de fondo del botón*/
     color: rgba(70, 255, 70, 0.692); /*color del texto del botón*/
     font-family: 'Press Start 2P', Arial, sans-serif; /*tipo de fuente del botón*/
-    padding: 7px 7px; /*espaciado del botón*/
+    padding: 12px 12px; /*espaciado del botón*/
     border: 2px solid rgba(70, 255, 70, 0.692); /*borde del botón*/
+    margin: 10px 3px;
     font-size: 12px;
     text-align: center;
     position: relative; 
@@ -85,12 +86,13 @@ form {
     background-color: #273524; /*color de fondo del botón*/
     color: rgba(70, 255, 70, 0.692); /*color del texto del botón*/
     border-radius: 1px;
-    padding: 5px;
-    margin: 5px;
+    padding: 1px 5px;
+    margin: 10px 5px;
     border: 2px solid rgba(70, 255, 70, 0.692); /*borde del botón*/
     text-align: center;
     font-size: 12px;
   }
+
 
   
   
